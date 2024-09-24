@@ -10,27 +10,27 @@ const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true);
     const axiosPublic = useAxiosPublic();
-    
+
     const logoutUser = () => {
         setEmail('');
         setUser(null)
         localStorage.setItem('access-token', '')
     }
-      const logOut = async () => {
-        setLoading(true)
-        
+    const logOut = async () => {
+        // setLoading(true)
+
         return logoutUser();
-      }
+    }
 
     // onAuthStateChange
     useEffect(() => {
         const email = getEmailInfo();
         // console.log('from loc = ', email);
-        setUser(email)
         if (email) {
+            setUser(email)
             // console.log('my = ', email)
 
-            axiosPublic.post('/jwt', {email}, {withCredentials:true})
+            axiosPublic.post('/jwt', { email }, { withCredentials: true })
                 .then(res => {
                     // console.log(res.data)
                     if (res.data.token) {
@@ -39,7 +39,8 @@ const AuthProvider = ({ children }) => {
                     }
                 })
         }
-       
+        setLoading(false);
+
     }, [])
 
     const authInfo = {
