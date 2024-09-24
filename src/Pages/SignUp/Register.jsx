@@ -28,7 +28,8 @@ const Register = () => {
 
     try {
       const { data } = await axiosPublic.post("/users", info);
-      if (data.message === "exist") {
+      console.log(data);
+      if (data?.message === "exist") {
         return Swal.fire({
           icon: "error",
           text: "This Email already exists. Choose another email!",
