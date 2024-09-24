@@ -3,7 +3,7 @@
 **Adminly** is a user management web application with registration, login, and user management features. It uses **React** for the frontend, **Express** and **Node.js** for the backend, and **MongoDB** for data storage. **JWT** is used for authentication, and the application allows users to block, unblock, and delete themselves or others.
 
 ## Live Demo
-[Live Link]()
+[Live Link](https://polite-rugelach-a09ad3.netlify.app/)
 
 ## Server-Side Repository
 [Server-Side Code - GitHub](https://github.com/Kamrul-Islam-171/adminly-server-side)
